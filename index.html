@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  <button onclick="myFunction()">Click</button>
+
+  <ul id="messages"></ul>
+
+  <div id="add"></div>
+  <button id="increment">Increment</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    function myFunction() {
+      const list = document.getElementById("myList");
+      const node = document.createElement("li");
+      node.id = 'demo'; //.type='text/javascript'
+      //.src='http.........'
+      list.appendChild(node);
+    }
+
+    const parcours = [
+      {message: 'bonjour', username: 'thalia'},
+      {message: 'à tous', username: 'thalia'},
+      {message: 'salut!', username: 'jonah'},
+      {message: 'heyyy', username: 'melanie'},
+      {message: 'poursuivre', username: 'thalia'},
+      {message: 'conversation', username: 'thalia'},
+      {message: 'bonjour', username: 'thalia'},
+      {message: 'commencions', username: 'thalia'},
+      {message: '<', username: 'thalia'},
+      {message: 'bonjour', username: 'thalia'}]
+    parcours.map(e => document.getElementById("messages").innerHTML += `<li><span>${e.message}: </span>${e.username}</li>`)
+
+    document
+      .getElementById("increment")
+      .addEventListener("click", () => {
+        if (parcours.map(e => e.username == 'thalia')) {
+          document.getElementById("add").innerHTML = 1;
+        }
+      });
+    
+    document
+      .getElementById("reset")
+      .addEventListener("click", () => {
+        setTimeout(() => {
+          document.getElementById("add").innerHTML = 0;
+        }, 1000);
+      });
+
+
+
+  </script>
+    <script src="mod.js" type="module"></script>
+  </body>
+</html>
